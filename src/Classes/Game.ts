@@ -13,7 +13,6 @@ export class Game{
 
     private gameObjects : GameObject[] = [];
 
-
     constructor(){
         // Init Game canvas
         // Codez ici...
@@ -30,6 +29,15 @@ export class Game{
         
         this.player = new Player(this);
         this.instanciate(this.player);
+
+        // Instancier 10 aliens
+        // Codez ici ...
+        for (let i = 0; i < this.nbAliens; i++) {
+            this.instanciate(new Alien(this));
+            
+        }
+
+
 
         // Ecoute les inputs
         Input.listen();

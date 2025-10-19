@@ -1,3 +1,4 @@
+import { Alien } from "./GameObjects/Alien.js";
 import { Player } from "./GameObjects/Player.js";
 import { Input } from "./Input.js";
 var Game = /** @class */ (function () {
@@ -19,6 +20,11 @@ var Game = /** @class */ (function () {
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         this.player = new Player(this);
         this.instanciate(this.player);
+        // Instancier 10 aliens
+        // Codez ici ...
+        for (var i = 0; i < this.nbAliens; i++) {
+            this.instanciate(new Alien(this));
+        }
         // Ecoute les inputs
         Input.listen();
         // Démarre la boucle de jeu
