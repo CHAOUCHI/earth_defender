@@ -7,6 +7,9 @@ var Assets = /** @class */ (function () {
             throw Error("No assets found");
         return image;
     };
+    Assets.getPlayerImage = function () {
+        throw Error("Feature missing");
+    };
     return Assets;
 }());
 export { Assets };

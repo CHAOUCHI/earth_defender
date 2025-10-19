@@ -6,4 +6,9 @@ export class Assets{
         return image;
     }
 
+    public static getPlayerImage() : HTMLImageElement{
+        throw Error("Feature missing")
+        
+    }
+
 }
