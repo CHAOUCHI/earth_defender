@@ -21,7 +21,7 @@ export class Game{
         
         // N'oubliez pas d'importer la classe GameObject
         // en ecrivant .js dans votre import
-        const gameObject = new GameObject();
+        const gameObject = new GameObject(this);
         this.draw(gameObject);
 
 

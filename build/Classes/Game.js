@@ -16,7 +16,7 @@ var Game = /** @class */ (function () {
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         // N'oubliez pas d'importer la classe GameObject
         // en ecrivant .js dans votre import
-        var gameObject = new GameObject();
+        var gameObject = new GameObject(this);
         this.draw(gameObject);
         // Démarre la boucle de jeu
         this.loop();
