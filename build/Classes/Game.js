@@ -71,6 +71,7 @@ var Game = /** @class */ (function () {
     Game.prototype.destory = function (gameObject) {
         // Codez ici ...
         // Supprimer gameObject du tableau de gameObjects
+        this.gameObjects = this.gameObjects.filter(function (go) { return go != gameObject; });
     };
     return Game;
 }());
