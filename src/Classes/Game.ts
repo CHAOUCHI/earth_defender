@@ -1,6 +1,7 @@
 import { Alien } from "./GameObjects/Alien.js";
 import { GameObject } from "./GameObjects/GameObject.js";
 import { Player } from "./GameObjects/Player.js";
+import { Star } from "./GameObjects/Star.js";
 import { Input } from "./Input.js";
 
 export class Game{
@@ -27,8 +28,13 @@ export class Game{
         this.context.fillStyle = "#141414";
         this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
         
-        this.player = new Player(this);
-        this.instanciate(this.player);
+     
+        /**
+         * Instanciation des Stars
+         */
+        for (let i = 0; i < 100; i++) {
+            this.instanciate(new Star(this));
+        }
 
         // Instancier 10 aliens
         // Codez ici ...
@@ -36,6 +42,11 @@ export class Game{
             this.instanciate(new Alien(this));
             
         }
+
+           this.player = new Player(this);
+        this.instanciate(this.player);
+
+
 
 
 

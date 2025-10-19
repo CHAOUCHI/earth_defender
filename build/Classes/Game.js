@@ -1,5 +1,6 @@
 import { Alien } from "./GameObjects/Alien.js";
 import { Player } from "./GameObjects/Player.js";
+import { Star } from "./GameObjects/Star.js";
 import { Input } from "./Input.js";
 var Game = /** @class */ (function () {
     function Game() {
@@ -18,13 +19,19 @@ var Game = /** @class */ (function () {
         this.context.clearRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         this.context.fillStyle = "#141414";
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
-        this.player = new Player(this);
-        this.instanciate(this.player);
+        /**
+         * Instanciation des Stars
+         */
+        for (var i = 0; i < 100; i++) {
+            this.instanciate(new Star(this));
+        }
         // Instancier 10 aliens
         // Codez ici ...
         for (var i = 0; i < this.nbAliens; i++) {
             this.instanciate(new Alien(this));
         }
+        this.player = new Player(this);
+        this.instanciate(this.player);
         // Ecoute les inputs
         Input.listen();
         // Démarre la boucle de jeu

@@ -20,5 +20,12 @@ export class Assets{
         return image;
     }
 
+    public static getStarImage() : HTMLImageElement{
+        const image: HTMLImageElement = document.querySelector("img#asset_star");
+        if(image == null) throw Error("No star asset found");
+
+        return image;
+    }
+
 
 }

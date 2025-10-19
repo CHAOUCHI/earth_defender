@@ -13,15 +13,31 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { GameObject } from "./GameObject";
+import { Assets } from "../Assets.js";
+import { GameObject } from "./GameObject.js";
 var Star = /** @class */ (function (_super) {
     __extends(Star, _super);
     function Star() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Star.prototype.start = function () {
+        this.setPosition({
+            x: Math.random() * this.getGame().CANVAS_WIDTH,
+            y: Math.random() * this.getGame().CANVAS_HEIGHT
+        });
+        this.setImage(Assets.getStarImage());
     };
     Star.prototype.update = function () {
+        if (this.getPosition().y > this.getGame().CANVAS_HEIGHT) {
+            this.setPosition({
+                x: this.getPosition().x,
+                y: 0
+            });
+        }
+        this.setPosition({
+            x: this.getPosition().x,
+            y: this.getPosition().y + 10
+        });
     };
     return Star;
 }(GameObject));
