@@ -5,6 +5,8 @@ import { Laser } from "./Laser.js";
 
 export class Player extends GameObject {
 
+    public lastShootTime  : number = Date.now();
+    private shootInterval_ms : number = 200;
     protected start(): void {
         this.setImage(Assets.getPlayerImage());
         // Codez ici...
@@ -21,8 +23,15 @@ export class Player extends GameObject {
             y : this.getPosition().y
         });
         console.log(Input.getAxisX());
-        if(Input.getIsShooting()){
+
+        if(
+            Input.getIsShooting() &&
+            (
+                (Date.now() - this.lastShootTime) >= this.shootInterval_ms
+            )
+        ){
             this.getGame().instanciate(new Laser(this.getGame()));
+            this.lastShootTime = Date.now();
         }
 
 
