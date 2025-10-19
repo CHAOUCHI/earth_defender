@@ -1,4 +1,5 @@
 import { Assets } from "../Assets.js";
+import { Input } from "../Input.js";
 import { GameObject } from "./GameObject.js";
 
 export class Player extends GameObject {
@@ -14,11 +15,12 @@ export class Player extends GameObject {
 
     protected update() : void{
         // Codez ici...
-        console.log(this.getPosition())
         this.setPosition({
             x : this.getPosition().x+10,
             y : this.getPosition().y
-        })
+        });
+        console.log(Input.getAxisX());
+
 
     }
 }

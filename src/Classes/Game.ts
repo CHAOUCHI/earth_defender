@@ -1,5 +1,6 @@
 import { GameObject } from "./GameObjects/GameObject.js";
 import { Player } from "./GameObjects/Player.js";
+import { Input } from "./Input.js";
 
 export class Game{
     private context : CanvasRenderingContext2D;
@@ -34,6 +35,8 @@ export class Game{
         const gameObject = new GameObject(this);
         this.draw(gameObject);
 
+        // Ecoute les inputs
+        Input.listen();
 
         // Démarre la boucle de jeu
         this.loop();
@@ -51,13 +54,13 @@ export class Game{
 
     private loop(){
         setInterval(()=>{
-            console.log("Frame!");
 
             this.context.clearRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
             this.context.fillStyle = "#141414";
             this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
-            
+
             this.draw(this.player);
+
 
             this.player.callUpdate();
         },10)

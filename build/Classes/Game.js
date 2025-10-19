@@ -1,5 +1,6 @@
 import { GameObject } from "./GameObjects/GameObject.js";
 import { Player } from "./GameObjects/Player.js";
+import { Input } from "./Input.js";
 var Game = /** @class */ (function () {
     function Game() {
         this.CANVAS_WIDTH = 900;
@@ -25,6 +26,8 @@ var Game = /** @class */ (function () {
         // en ecrivant .js dans votre import
         var gameObject = new GameObject(this);
         this.draw(gameObject);
+        // Ecoute les inputs
+        Input.listen();
         // Démarre la boucle de jeu
         this.loop();
     };
@@ -34,7 +37,6 @@ var Game = /** @class */ (function () {
     Game.prototype.loop = function () {
         var _this = this;
         setInterval(function () {
-            console.log("Frame!");
             _this.context.clearRect(0, 0, _this.CANVAS_WIDTH, _this.CANVAS_HEIGHT);
             _this.context.fillStyle = "#141414";
             _this.context.fillRect(0, 0, _this.CANVAS_WIDTH, _this.CANVAS_HEIGHT);
