@@ -32,7 +32,7 @@ var Player = /** @class */ (function (_super) {
     Player.prototype.update = function () {
         // Codez ici...
         this.setPosition({
-            x: this.getPosition().x + 10,
+            x: this.getPosition().x + 10 * Input.getAxisX(),
             y: this.getPosition().y
         });
         console.log(Input.getAxisX());
