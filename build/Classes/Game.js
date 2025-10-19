@@ -9,6 +9,11 @@ var Game = /** @class */ (function () {
         canvas.height = this.CANVAS_HEIGHT;
         canvas.width = this.CANVAS_WIDTH;
     }
+    Game.prototype.start = function () {
+        this.context.clearRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
+        this.context.fillStyle = "#141414";
+        this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
+    };
     return Game;
 }());
 export { Game };
