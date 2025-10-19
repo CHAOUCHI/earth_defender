@@ -36,6 +36,14 @@ export class GameObject{
         this.position = position;
     }
 
+    /**
+     * Vérifie si l'autre GameObject entre en collision avec ce GameObject
+     */
+    public overlap(other : GameObject) : boolean{
+        // Codez ici ...
+        throw Error("Not implemented yet");
+    }
+
     // Implemented by child Classes
     protected start(){}
     

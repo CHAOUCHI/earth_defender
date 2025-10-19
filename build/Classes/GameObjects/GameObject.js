@@ -24,6 +24,13 @@ var GameObject = /** @class */ (function () {
     GameObject.prototype.setPosition = function (position) {
         this.position = position;
     };
+    /**
+     * Vérifie si l'autre GameObject entre en collision avec ce GameObject
+     */
+    GameObject.prototype.overlap = function (other) {
+        // Codez ici ...
+        throw Error("Not implemented yet");
+    };
     // Implemented by child Classes
     GameObject.prototype.start = function () { };
     // Implemented by child Classes

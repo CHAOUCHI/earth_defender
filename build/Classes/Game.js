@@ -52,6 +52,9 @@ var Game = /** @class */ (function () {
             _this.gameObjects.forEach(function (go) {
                 go.callUpdate();
                 _this.draw(go);
+                if (go instanceof Alien && _this.player.overlap(go)) {
+                    console.log("Alien touche le joueur");
+                }
             });
         }, 10);
     };
