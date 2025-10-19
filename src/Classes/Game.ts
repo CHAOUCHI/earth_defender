@@ -23,6 +23,10 @@ export class Game{
         // en ecrivant .js dans votre import
         const gameObject = new GameObject();
         this.draw(gameObject);
+
+
+        // Démarre la boucle de jeu
+        this.loop();
     }
 
     private draw(gameObject : GameObject) : void{
@@ -33,6 +37,12 @@ export class Game{
             gameObject.getImage().width,
             gameObject.getImage().height
         )
+    }
+
+    private loop(){
+        setInterval(()=>{
+            console.log("Frame!");
+        },10)
     }
 
 }

@@ -18,9 +18,16 @@ var Game = /** @class */ (function () {
         // en ecrivant .js dans votre import
         var gameObject = new GameObject();
         this.draw(gameObject);
+        // Démarre la boucle de jeu
+        this.loop();
     };
     Game.prototype.draw = function (gameObject) {
         this.context.drawImage(gameObject.getImage(), gameObject.getPosition().x, gameObject.getPosition().y, gameObject.getImage().width, gameObject.getImage().height);
+    };
+    Game.prototype.loop = function () {
+        setInterval(function () {
+            console.log("Frame!");
+        }, 10);
     };
     return Game;
 }());
