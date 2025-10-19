@@ -14,6 +14,10 @@ var Game = /** @class */ (function () {
         this.context.clearRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         this.context.fillStyle = "#141414";
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
+        // J'instancie le Player avec new
+        // Codez ici...
+        // Je le dessine avec this.draw
+        // Codez ici...
         // N'oubliez pas d'importer la classe GameObject
         // en ecrivant .js dans votre import
         var gameObject = new GameObject(this);
