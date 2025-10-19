@@ -23,10 +23,11 @@ export class Game{
         
         // J'instancie le Player avec new
         // Codez ici...
-        
+        this.player = new Player(this);
 
         // Je le dessine avec this.draw
         // Codez ici...
+        this.draw(this.player);
 
         // N'oubliez pas d'importer la classe GameObject
         // en ecrivant .js dans votre import

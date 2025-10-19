@@ -1,4 +1,5 @@
 import { GameObject } from "./GameObjects/GameObject.js";
+import { Player } from "./GameObjects/Player.js";
 var Game = /** @class */ (function () {
     function Game() {
         this.CANVAS_WIDTH = 900;
@@ -16,8 +17,10 @@ var Game = /** @class */ (function () {
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         // J'instancie le Player avec new
         // Codez ici...
+        this.player = new Player(this);
         // Je le dessine avec this.draw
         // Codez ici...
+        this.draw(this.player);
         // N'oubliez pas d'importer la classe GameObject
         // en ecrivant .js dans votre import
         var gameObject = new GameObject(this);
