@@ -4,6 +4,7 @@ var Game = /** @class */ (function () {
     function Game() {
         this.CANVAS_WIDTH = 900;
         this.CANVAS_HEIGHT = 600;
+        this.nbAliens = 10;
         this.gameObjects = [];
         // Init Game canvas
         // Codez ici...

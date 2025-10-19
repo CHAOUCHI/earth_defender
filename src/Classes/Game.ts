@@ -9,6 +9,8 @@ export class Game{
     public readonly CANVAS_HEIGHT : number = 600;
     private player : Player;
 
+    private nbAliens : number = 10;
+
     private gameObjects : GameObject[] = [];
 
 
@@ -28,8 +30,6 @@ export class Game{
         
         this.player = new Player(this);
         this.instanciate(this.player);
-
-        
 
         // Ecoute les inputs
         Input.listen();
