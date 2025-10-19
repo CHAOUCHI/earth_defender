@@ -77,9 +77,13 @@ export class Game {
             this.gameObjects.forEach(go => {
                 go.callUpdate();
                 this.draw(go);
-                if(go instanceof Alien && this.player.overlap(go)){
-                    console.log("Alien touche le joueur");
-                }
+                this.gameObjects.forEach(other=>{
+
+                    if(other != go && go.overlap(other)){
+                        console.log("Deux Gos différents se touchent");
+                        go.callCollide(other);
+                    }
+                })
             });
 
 

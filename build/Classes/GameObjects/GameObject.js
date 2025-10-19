@@ -74,6 +74,10 @@ var GameObject = /** @class */ (function () {
     GameObject.prototype.callUpdate = function () {
         this.update();
     };
+    GameObject.prototype.collide = function (other) { };
+    GameObject.prototype.callCollide = function (other) {
+        this.collide(other);
+    };
     return GameObject;
 }());
 export { GameObject };

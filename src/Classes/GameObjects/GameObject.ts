@@ -94,6 +94,12 @@ export class GameObject {
     public callUpdate() {
         this.update();
     }
+    
+    protected collide(other:GameObject){}
+
+    public callCollide(other : GameObject):void{
+        this.collide(other);
+    }
 
 
 }

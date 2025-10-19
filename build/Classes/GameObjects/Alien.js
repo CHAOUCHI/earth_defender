@@ -41,6 +41,8 @@ var Alien = /** @class */ (function (_super) {
             y: this.getPosition().y + 1
         });
     };
+    Alien.prototype.collide = function (other) {
+    };
     return Alien;
 }(GameObject));
 export { Alien };
