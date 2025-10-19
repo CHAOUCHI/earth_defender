@@ -14,6 +14,9 @@ var Game = /** @class */ (function () {
         this.context.fillStyle = "#141414";
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
     };
+    Game.prototype.draw = function (gameObject) {
+        this.context;
+    };
     return Game;
 }());
 export { Game };

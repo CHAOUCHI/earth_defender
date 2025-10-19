@@ -18,4 +18,8 @@ export class Game{
         this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
     }
 
+    private draw(gameObject : GameObject) : void{
+        this.context
+    }
+
 }

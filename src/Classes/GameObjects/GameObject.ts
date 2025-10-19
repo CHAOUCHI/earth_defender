@@ -19,4 +19,6 @@ export class GameObject{
     public getPosition() : Position{
         return this.position;
     }
+
+  
 }
