@@ -28,8 +28,20 @@ var GameObject = /** @class */ (function () {
      * Vérifie si l'autre GameObject entre en collision avec ce GameObject
      */
     GameObject.prototype.overlap = function (other) {
-        // Codez ici ...
-        throw Error("Not implemented yet");
+        throw "Not implemented";
+    };
+    /** Méthodes utilitaires pour la position du GameObject */
+    GameObject.prototype.top = function () {
+        return this.position.y;
+    };
+    GameObject.prototype.bottom = function () {
+        return this.position.y + this.image.height;
+    };
+    GameObject.prototype.left = function () {
+        return this.position.x;
+    };
+    GameObject.prototype.right = function () {
+        return this.position.x + this.image.width;
     };
     // Implemented by child Classes
     GameObject.prototype.start = function () { };
