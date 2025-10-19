@@ -1,3 +1,5 @@
+import { GameObject } from "./GameObjects/GameObject";
+
 export class Game{
     private context : CanvasRenderingContext2D;
     public readonly CANVAS_WIDTH : number = 900;
