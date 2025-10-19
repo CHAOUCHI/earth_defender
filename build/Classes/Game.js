@@ -35,6 +35,10 @@ var Game = /** @class */ (function () {
         var _this = this;
         setInterval(function () {
             console.log("Frame!");
+            _this.context.clearRect(0, 0, _this.CANVAS_WIDTH, _this.CANVAS_HEIGHT);
+            _this.context.fillStyle = "#141414";
+            _this.context.fillRect(0, 0, _this.CANVAS_WIDTH, _this.CANVAS_HEIGHT);
+            _this.draw(_this.player);
             _this.player.callUpdate();
         }, 10);
     };

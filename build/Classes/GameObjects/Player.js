@@ -30,6 +30,11 @@ var Player = /** @class */ (function (_super) {
     };
     Player.prototype.update = function () {
         // Codez ici...
+        console.log(this.getPosition());
+        this.setPosition({
+            x: this.getPosition().x + 10,
+            y: this.getPosition().y
+        });
     };
     return Player;
 }(GameObject));

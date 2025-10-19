@@ -14,6 +14,11 @@ export class Player extends GameObject {
 
     protected update() : void{
         // Codez ici...
+        console.log(this.getPosition())
+        this.setPosition({
+            x : this.getPosition().x+10,
+            y : this.getPosition().y
+        })
 
     }
 }
