@@ -65,6 +65,13 @@ var Game = /** @class */ (function () {
         alert("GameOver!");
         window.location.reload();
     };
+    Game.prototype.getPlayer = function () {
+        return this.player;
+    };
+    Game.prototype.destory = function (gameObject) {
+        // Codez ici ...
+        // Supprimer gameObject du tableau de gameObjects
+    };
     return Game;
 }());
 export { Game };

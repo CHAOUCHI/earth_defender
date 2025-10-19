@@ -95,6 +95,16 @@ export class Game {
         window.location.reload();
     }
 
+    public getPlayer() : Player {
+        return this.player;
+    }
+
+    public destory(gameObject) : void{
+        // Codez ici ...
+        // Supprimer gameObject du tableau de gameObjects
+        
+    }
+
 
 
 }
