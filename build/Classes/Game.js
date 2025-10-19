@@ -1,4 +1,4 @@
-import { GameObject } from "./GameObjects/GameObject.js";
+import { Alien } from "./GameObjects/Alien.js";
 import { Player } from "./GameObjects/Player.js";
 import { Input } from "./Input.js";
 var Game = /** @class */ (function () {
@@ -16,16 +16,10 @@ var Game = /** @class */ (function () {
         this.context.clearRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         this.context.fillStyle = "#141414";
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
-        // J'instancie le Player avec new
-        // Codez ici...
         this.player = new Player(this);
-        // Je le dessine avec this.draw
-        // Codez ici...
         this.draw(this.player);
-        // N'oubliez pas d'importer la classe GameObject
-        // en ecrivant .js dans votre import
-        var gameObject = new GameObject(this);
-        this.draw(gameObject);
+        this.alien = new Alien(this);
+        this.draw(this.alien);
         // Ecoute les inputs
         Input.listen();
         // Démarre la boucle de jeu
@@ -42,6 +36,8 @@ var Game = /** @class */ (function () {
             _this.context.fillRect(0, 0, _this.CANVAS_WIDTH, _this.CANVAS_HEIGHT);
             _this.draw(_this.player);
             _this.player.callUpdate();
+            _this.draw(_this.alien);
+            _this.alien.callUpdate();
         }, 10);
     };
     return Game;

@@ -1,3 +1,4 @@
+import { Alien } from "./GameObjects/Alien.js";
 import { GameObject } from "./GameObjects/GameObject.js";
 import { Player } from "./GameObjects/Player.js";
 import { Input } from "./Input.js";
@@ -7,6 +8,8 @@ export class Game{
     public readonly CANVAS_WIDTH : number = 900;
     public readonly CANVAS_HEIGHT : number = 600;
     private player : Player;
+
+    private alien : Alien;
 
     constructor(){
         // Init Game canvas
@@ -22,18 +25,11 @@ export class Game{
         this.context.fillStyle = "#141414";
         this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
         
-        // J'instancie le Player avec new
-        // Codez ici...
         this.player = new Player(this);
-
-        // Je le dessine avec this.draw
-        // Codez ici...
         this.draw(this.player);
 
-        // N'oubliez pas d'importer la classe GameObject
-        // en ecrivant .js dans votre import
-        const gameObject = new GameObject(this);
-        this.draw(gameObject);
+        this.alien = new Alien(this);
+        this.draw(this.alien);
 
         // Ecoute les inputs
         Input.listen();
@@ -60,9 +56,11 @@ export class Game{
             this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
 
             this.draw(this.player);
-
-
             this.player.callUpdate();
+
+            this.draw(this.alien);
+            this.alien.callUpdate();
+
         },10)
     }
 
