@@ -32,8 +32,10 @@ var Game = /** @class */ (function () {
         this.context.drawImage(gameObject.getImage(), gameObject.getPosition().x, gameObject.getPosition().y, gameObject.getImage().width, gameObject.getImage().height);
     };
     Game.prototype.loop = function () {
+        var _this = this;
         setInterval(function () {
             console.log("Frame!");
+            _this.player.callUpdate();
         }, 10);
     };
     return Game;

@@ -11,4 +11,9 @@ export class Player extends GameObject {
             y: this.getGame().CANVAS_HEIGHT - this.getImage().height - 10 
         });
     }
+
+    protected update() : void{
+        // Codez ici...
+
+    }
 }

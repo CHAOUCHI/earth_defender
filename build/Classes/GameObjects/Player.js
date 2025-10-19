@@ -28,6 +28,9 @@ var Player = /** @class */ (function (_super) {
             y: this.getGame().CANVAS_HEIGHT - this.getImage().height - 10
         });
     };
+    Player.prototype.update = function () {
+        // Codez ici...
+    };
     return Player;
 }(GameObject));
 export { Player };

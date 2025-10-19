@@ -38,6 +38,14 @@ export class GameObject{
 
     // Implemented by child Classes
     protected start(){}
+    
+    // Implemented by child Classes
+    protected update(){}
+
+    // Called by Game class
+    public callUpdate(){
+        this.update();
+    }
 
   
 }

@@ -52,6 +52,7 @@ export class Game{
     private loop(){
         setInterval(()=>{
             console.log("Frame!");
+            this.player.callUpdate();
         },10)
     }
 

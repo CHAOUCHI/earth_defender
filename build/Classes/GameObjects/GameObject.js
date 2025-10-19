@@ -26,6 +26,12 @@ var GameObject = /** @class */ (function () {
     };
     // Implemented by child Classes
     GameObject.prototype.start = function () { };
+    // Implemented by child Classes
+    GameObject.prototype.update = function () { };
+    // Called by Game class
+    GameObject.prototype.callUpdate = function () {
+        this.update();
+    };
     return GameObject;
 }());
 export { GameObject };
