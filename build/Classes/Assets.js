@@ -25,6 +25,12 @@ var Assets = /** @class */ (function () {
             throw Error("No star asset found");
         return image;
     };
+    Assets.getLaserImage = function () {
+        var image = document.querySelector("img#asset_laser");
+        if (image == null)
+            throw Error("No star asset found");
+        return image;
+    };
     return Assets;
 }());
 export { Assets };

@@ -4,6 +4,9 @@ var Input = /** @class */ (function () {
     Input.getAxisX = function () {
         return this.axisX;
     };
+    Input.getIsShooting = function () {
+        return Input.isShooting;
+    };
     Input.listen = function () {
         // Codez ici...
         window.addEventListener("keydown", function (event) {
@@ -17,6 +20,9 @@ var Input = /** @class */ (function () {
                 case "Q":
                     Input.axisX = -1;
                     break;
+                case " ":
+                    Input.isShooting = true;
+                    break;
                 default:
                     break;
             }
@@ -29,12 +35,16 @@ var Input = /** @class */ (function () {
                 case "Q":
                     Input.axisX = 0;
                     break;
+                case " ":
+                    Input.isShooting = false;
+                    break;
                 default:
                     break;
             }
         });
     };
     Input.axisX = 0;
+    Input.isShooting = false;
     return Input;
 }());
 export { Input };

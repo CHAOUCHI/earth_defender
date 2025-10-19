@@ -1,6 +1,7 @@
 import { Assets } from "../Assets.js";
 import { Input } from "../Input.js";
 import { GameObject } from "./GameObject.js";
+import { Laser } from "./Laser.js";
 
 export class Player extends GameObject {
 
@@ -20,6 +21,9 @@ export class Player extends GameObject {
             y : this.getPosition().y
         });
         console.log(Input.getAxisX());
+        if(Input.getIsShooting()){
+            this.getGame().instanciate(new Laser(this.getGame()));
+        }
 
 
     }

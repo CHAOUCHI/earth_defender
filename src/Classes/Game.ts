@@ -99,7 +99,7 @@ export class Game {
         return this.player;
     }
 
-    public destory(gameObject : GameObject) : void{
+    public destroy(gameObject : GameObject) : void{
         // Codez ici ...
         // Supprimer gameObject du tableau de gameObjects
         this.gameObjects = this.gameObjects.filter(go=>go!=gameObject);

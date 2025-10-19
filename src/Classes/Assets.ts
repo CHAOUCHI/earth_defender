@@ -26,6 +26,13 @@ export class Assets{
 
         return image;
     }
+    public static getLaserImage() : HTMLImageElement{
+        const image: HTMLImageElement = document.querySelector("img#asset_laser");
+        if(image == null) throw Error("No star asset found");
+
+        return image;
+    }
+    
 
 
 }

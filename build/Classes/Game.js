@@ -68,7 +68,7 @@ var Game = /** @class */ (function () {
     Game.prototype.getPlayer = function () {
         return this.player;
     };
-    Game.prototype.destory = function (gameObject) {
+    Game.prototype.destroy = function (gameObject) {
         // Codez ici ...
         // Supprimer gameObject du tableau de gameObjects
         this.gameObjects = this.gameObjects.filter(function (go) { return go != gameObject; });

@@ -14,33 +14,35 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { Assets } from "../Assets.js";
-import { Input } from "../Input.js";
+import { Alien } from "./Alien.js";
 import { GameObject } from "./GameObject.js";
-import { Laser } from "./Laser.js";
-var Player = /** @class */ (function (_super) {
-    __extends(Player, _super);
-    function Player() {
+var Laser = /** @class */ (function (_super) {
+    __extends(Laser, _super);
+    function Laser() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Player.prototype.start = function () {
-        this.setImage(Assets.getPlayerImage());
-        // Codez ici...
+    Laser.prototype.start = function () {
+        this.setImage(Assets.getLaserImage());
         this.setPosition({
-            x: this.getGame().CANVAS_WIDTH / 2 - this.getImage().width / 2,
-            y: this.getGame().CANVAS_HEIGHT - this.getImage().height - 10
+            x: this.getGame().getPlayer().getPosition().x,
+            y: this.getGame().getPlayer().getPosition().y - this.getImage().height
         });
     };
-    Player.prototype.update = function () {
-        // Codez ici...
+    Laser.prototype.update = function () {
         this.setPosition({
-            x: this.getPosition().x + 10 * Input.getAxisX(),
-            y: this.getPosition().y
+            x: this.getPosition().x,
+            y: this.getPosition().y - 10,
         });
-        console.log(Input.getAxisX());
-        if (Input.getIsShooting()) {
-            this.getGame().instanciate(new Laser(this.getGame()));
+        if (this.getPosition().y < 0) {
+            this.getGame().destroy(this);
         }
     };
-    return Player;
+    Laser.prototype.collide = function (other) {
+        if (other instanceof Alien) {
+            this.getGame().destroy(other);
+            this.getGame().destroy(this);
+        }
+    };
+    return Laser;
 }(GameObject));
-export { Player };
+export { Laser };
