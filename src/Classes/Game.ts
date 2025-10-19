@@ -27,8 +27,9 @@ export class Game{
         this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
         
         this.player = new Player(this);
-        this.draw(this.player);
+        this.instanciate(this.player);
 
+        
 
         // Ecoute les inputs
         Input.listen();
@@ -58,8 +59,10 @@ export class Game{
             this.context.fillStyle = "#141414";
             this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
 
-            this.draw(this.player);
-            this.player.callUpdate();
+            this.gameObjects.forEach(go => {
+                go.callUpdate();
+                this.draw(go);
+            });
 
 
         },10)

@@ -17,7 +17,7 @@ var Game = /** @class */ (function () {
         this.context.fillStyle = "#141414";
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         this.player = new Player(this);
-        this.draw(this.player);
+        this.instanciate(this.player);
         // Ecoute les inputs
         Input.listen();
         // Démarre la boucle de jeu
@@ -35,8 +35,10 @@ var Game = /** @class */ (function () {
             _this.context.clearRect(0, 0, _this.CANVAS_WIDTH, _this.CANVAS_HEIGHT);
             _this.context.fillStyle = "#141414";
             _this.context.fillRect(0, 0, _this.CANVAS_WIDTH, _this.CANVAS_HEIGHT);
-            _this.draw(_this.player);
-            _this.player.callUpdate();
+            _this.gameObjects.forEach(function (go) {
+                go.callUpdate();
+                _this.draw(go);
+            });
         }, 10);
     };
     return Game;
