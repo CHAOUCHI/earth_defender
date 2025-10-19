@@ -61,6 +61,10 @@ var Game = /** @class */ (function () {
             });
         }, 10);
     };
+    Game.prototype.over = function () {
+        alert("GameOver!");
+        window.location.reload();
+    };
     return Game;
 }());
 export { Game };

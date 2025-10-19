@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 import { Assets } from "../Assets.js";
 import { GameObject } from "./GameObject.js";
+import { Player } from "./Player.js";
 var Alien = /** @class */ (function (_super) {
     __extends(Alien, _super);
     function Alien() {
@@ -42,6 +43,10 @@ var Alien = /** @class */ (function (_super) {
         });
     };
     Alien.prototype.collide = function (other) {
+        if (other instanceof Player) {
+            console.log("Miam Miam !");
+            this.getGame().over();
+        }
     };
     return Alien;
 }(GameObject));

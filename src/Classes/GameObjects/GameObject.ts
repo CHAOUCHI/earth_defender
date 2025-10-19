@@ -101,5 +101,4 @@ export class GameObject {
         this.collide(other);
     }
 
-
 }

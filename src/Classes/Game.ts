@@ -90,6 +90,11 @@ export class Game {
         }, 10)
     }
 
+    public over() : void{
+        alert("GameOver!")
+        window.location.reload();
+    }
+
 
 
 }
