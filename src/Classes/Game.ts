@@ -1,4 +1,4 @@
-import { GameObject } from "./GameObjects/GameObject";
+import { GameObject } from "./GameObjects/GameObject.js";
 
 export class Game{
     private context : CanvasRenderingContext2D;
@@ -18,10 +18,21 @@ export class Game{
         this.context.clearRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
         this.context.fillStyle = "#141414";
         this.context.fillRect(0,0,this.CANVAS_WIDTH,this.CANVAS_HEIGHT);
+        
+        // N'oubliez pas d'importer la classe GameObject
+        // en ecrivant .js dans votre import
+        const gameObject = new GameObject();
+        this.draw(gameObject);
     }
 
     private draw(gameObject : GameObject) : void{
-        this.context
+        this.context.drawImage(
+            gameObject.getImage(),
+            gameObject.getPosition().x,
+            gameObject.getPosition().y,
+            gameObject.getImage().width,
+            gameObject.getImage().height
+        )
     }
 
 }

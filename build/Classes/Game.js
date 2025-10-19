@@ -1,3 +1,4 @@
+import { GameObject } from "./GameObjects/GameObject.js";
 var Game = /** @class */ (function () {
     function Game() {
         this.CANVAS_WIDTH = 900;
@@ -13,9 +14,13 @@ var Game = /** @class */ (function () {
         this.context.clearRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
         this.context.fillStyle = "#141414";
         this.context.fillRect(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
+        // N'oubliez pas d'importer la classe GameObject
+        // en ecrivant .js dans votre import
+        var gameObject = new GameObject();
+        this.draw(gameObject);
     };
     Game.prototype.draw = function (gameObject) {
-        this.context;
+        this.context.drawImage(gameObject.getImage(), gameObject.getPosition().x, gameObject.getPosition().y, gameObject.getImage().width, gameObject.getImage().height);
     };
     return Game;
 }());
