@@ -7,8 +7,10 @@ export class Assets{
     }
 
     public static getPlayerImage() : HTMLImageElement{
-        throw Error("Feature missing")
-        
+        const image: HTMLImageElement = document.querySelector("img#asset_player");
+        if(image == null) throw Error("No player asset found");
+
+        return image;
     }
 
 }

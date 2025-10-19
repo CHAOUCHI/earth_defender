@@ -8,7 +8,10 @@ var Assets = /** @class */ (function () {
         return image;
     };
     Assets.getPlayerImage = function () {
-        throw Error("Feature missing");
+        var image = document.querySelector("img#asset_player");
+        if (image == null)
+            throw Error("No player asset found");
+        return image;
     };
     return Assets;
 }());
