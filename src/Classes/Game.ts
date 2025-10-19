@@ -9,7 +9,8 @@ export class Game{
     public readonly CANVAS_HEIGHT : number = 600;
     private player : Player;
 
-    private alien : Alien;
+    private gameObjects : GameObject[] = [];
+
 
     constructor(){
         // Init Game canvas
@@ -28,14 +29,16 @@ export class Game{
         this.player = new Player(this);
         this.draw(this.player);
 
-        this.alien = new Alien(this);
-        this.draw(this.alien);
 
         // Ecoute les inputs
         Input.listen();
 
         // Démarre la boucle de jeu
         this.loop();
+    }
+
+    public instanciate(gameObject : GameObject) : void{
+        this.gameObjects.push(gameObject);
     }
 
     private draw(gameObject : GameObject) : void{
@@ -58,10 +61,10 @@ export class Game{
             this.draw(this.player);
             this.player.callUpdate();
 
-            this.draw(this.alien);
-            this.alien.callUpdate();
 
         },10)
     }
+
+    
 
 }
