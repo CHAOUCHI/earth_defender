@@ -23,6 +23,10 @@ var Player = /** @class */ (function (_super) {
     Player.prototype.start = function () {
         this.setImage(Assets.getPlayerImage());
         // Codez ici...
+        this.setPosition({
+            x: this.getGame().CANVAS_WIDTH / 2 - this.getImage().width / 2,
+            y: this.getGame().CANVAS_HEIGHT - this.getImage().height - 10
+        });
     };
     return Player;
 }(GameObject));
